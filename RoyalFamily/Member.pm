@@ -4,7 +4,7 @@
 # Jay Steiner
 # 21/10/2021
 
-use lib '..';
+use lib '.';
 package RoyalFamily::Member;
 use RoyalFamily::DBI;
 

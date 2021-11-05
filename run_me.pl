@@ -25,6 +25,7 @@ my $log = Log::Log4perl->get_logger("RF_Member");
 
 my $supported_commands = {
     ADD_CHILD => 3,
+    ADD_MEMBER_VIA_MARRIAGE => 3,
     GET_RELATIONSHIP => 2
 };
 
@@ -35,11 +36,7 @@ GetOptions (
     "help|?" => \$help
 );
 
-pod2usage(1) if $help;
-
-if ( !$file_path ) {
-    print "File path is required in the format of: perl run_me.pl --file_path=Foo_File.txt";
-}
+pod2usage(1) if ( $help || !$file_path );
 
 =head1 SYNOPSIS
 
@@ -164,6 +161,35 @@ sub main {
             # All Done!
             $log->info("RELATIONS RETURNED SUCESSFULLY\n");
             print $result_string . "\n";
+
+        } elsif ( $command eq 'ADD_MEMBER_VIA_MARRIAGE' ) {
+
+            # Assume all is well now~!
+            my ($member, $spouse_name, $spouse_gender) = @args;
+            $log->info("Actioning Command: $command, -- With Member Of: $member, Spouse Name: $spouse_name, Spouse Gender: $spouse_gender" );
+            
+            # Perform Action
+            $log->info("Instantiating RoyalFamily::Member Object");
+            my $rf_member = RoyalFamily::Member->new( Name => $member );
+            if ( ref($rf_member) ne 'RoyalFamily::Member' ) {
+                print "PERSON_NOT_FOUND\n";
+                next;
+            }
+            $log->debug("RoyalFamily::Member object created: \n", Dumper $rf_member);
+            
+            $log->info("Adding new spouse RoyalFamily::Member object via Current RF Member");
+            my $spouse = $rf_member->add_member_via_marriage( Name => $spouse_name, Gender => $spouse_gender);
+            $log->debug("Spouse Object Returned: \n", Dumper $spouse);
+            
+            # Check an object has been returned
+            if ( ref($spouse) ne 'RoyalFamily::Member' ) {
+                print "MEMBER_ADDITION_VIA_MARRIAGE_FAILED\n";
+                next;
+            }
+            
+            # All Done!
+            $log->info("MEMBER ADDED VIA MARRIAGE SUCESSFULLY\n");
+            print "MEMBER_ADDED_VIA_MARRIAGE\n",
         }
     }
 
