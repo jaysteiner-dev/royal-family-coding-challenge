@@ -29,15 +29,17 @@ Let's go ahead and factor the moving parts and in this exercise and make note of
 ## Install
 This project uses [perl](https://www.perl.org/) and [cpan](https://metacpan.org/). Go check them out if you don't have them locally installed.
 
-Once set-up with your version of perl you will need the following packages, some will be out-of-thebox with your Perl environment package.
-for example [strawberry](https://strawberryperl.com/)
+Once set-up with your version of perl you will need the following packages, some will be out-of-the-box with your Perl environment package.
+for example [strawberry](https://strawberryperl.com/) will contain already some of these.
 
 ```sh
-$ cpanm Getopt::Long;
-$ cpanm Pod::Usage;
-$ cpanm Log::Log4perl;
-$ cpanm Cwd;
-$ cpanm File::Spec;
+$ cpanm Getopt::Long
+$ cpanm Pod::Usage
+$ cpanm Log::Log4perl
+$ cpanm Cwd
+$ cpanm File::Spec
+$ cpanm Test::More
+$ cpan Bundle::DBD::CSV
 ```
 
 Furthermore you will need a [MySQL](https://www.mysql.com/) Service running correctly on your Localhost

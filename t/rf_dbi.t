@@ -1,6 +1,8 @@
 #!/usr/bin/perl -w
 
 # Notes:
+# Stop! This is just a dummy test file, a sample for reference if I was to model more test cases for my Objects.
+
 # This is a test library for RoyalFamily::DBI
 
 use lib '..';
@@ -8,11 +10,11 @@ use RoyalFamily::DBI;
 
 use strict;
 use warnings;
-
-use Data::Dumper;
+use utf-8;
 
 # Packages
 use Test::More;
+
 
 # -------- RoyalFamily::DBI ---------
 # Object instantion
