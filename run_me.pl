@@ -18,7 +18,6 @@ use Getopt::Long;
 use Pod::Usage;
 use Log::Log4perl;
 use Data::Dumper;
-use Try::Tiny;
 
 # Set up Logging
 Log::Log4perl->init('conf\log.conf');

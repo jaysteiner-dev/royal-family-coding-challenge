@@ -16,6 +16,8 @@ use DBI;
 use DBD::CSV;
 use Log::Log4perl;
 use DateTime;
+use Cwd;
+use File::Spec;
 
 # MySQL database configuration
 my $DSN = "DBI:mysql:royalfamily";
@@ -213,8 +215,6 @@ sub get_names {
 }
 
 sub get_f_dir {
-    use Cwd;
-    use File::Spec;
     my $dir = getcwd();
     my ( $volume, $directories, $test_path ) = File::Spec->splitpath( $dir );
 
