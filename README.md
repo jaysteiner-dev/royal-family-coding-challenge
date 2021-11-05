@@ -1,18 +1,14 @@
 # Royal Family Solution - Jay Steiner
 
 ## Synopsis
-----
 
 
 ## Table of Contents
-----
 - [Install](#install)
 - [Setting Up](#usage)
 - [Usage](#usage)
 
 ## Install
-----
-
 This project uses [perl](https://www.perl.org/) and [cpan](https://metacpan.org/). Go check them out if you don't have them locally installed.
 
 Once set-up with your version of perl you will need the following packages, some will be out-of-thebox with your Perl environment package.
@@ -26,12 +22,10 @@ $ cpanm Cwd;
 $ cpanm File::Spec;
 ```
 
-Furthermore you will need a [MySQL](https://www.mysql.com/) Servive running correctly on your Localhost
+Furthermore you will need a [MySQL](https://www.mysql.com/) Service running correctly on your Localhost
 It's best to check you have these all installed correctly first.
 
 ## Setting up
-----
-
 With the above completed, and your MySQL Service running on Localhost - we can begin setting up the database in the following order:
 
 ```sh
@@ -46,8 +40,6 @@ $ \. populate_relationships.sql
 > So you can go right ahead and test without doing the DB Set-up, or in the event you're too lazy to! -- Happy Friday!
 
 ## Usage
-----
-
 Once you have all Modules installed and your DB created you can begin testing against the framework
 
 ```sh
