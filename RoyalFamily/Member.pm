@@ -40,10 +40,8 @@ sub new {
 sub _get_member {
     my ( $self, %args ) = @_;
 
-    if ( scalar (keys %args) > 1 ) {
+    if ( scalar (keys %args) != 1 ) {
         $self->{log}->info("_get_member accepts only one parameter per fetch - MemberID or Name");
-    } elsif ( !%args ) {
-        $self->{log}->info("Instantiation requires atleast one parameter - MemberID or Name");
     }
 
     # Grab identififier - MemberID or Name
@@ -54,8 +52,6 @@ sub _get_member {
             $self->{$column_name} = $member_data->{$column_name};
         }
     }
-
-    return $self || "PERSON_NOT_FOUND";
 }
 
 sub get_relationship {
@@ -78,7 +74,7 @@ sub get_relationship {
         return "RELATIONSHIP_NOT_SUPPORTED";
     }
     
-    # a bit Hacky but works
+    # Perl nuance
     my $subref = $dispatcher{$relationship};
     my @relations = @{ $self->$subref( relation_type => $relationship ) };
     
@@ -89,7 +85,7 @@ sub add_child {
     my ( $self, %args ) = @_;
 
     my $args_count = scalar ( keys %args );
-    if ( $args_count > 2 || $args_count < 2 || !$args_count ) {
+    if ( !$args_count || $args_count != 2 ) {
         $self->{log}->info("add_child accepts only two parameters: Name => 'Someone', Gender => 'Non-Binary'");
         return "CHILD_ADDITION_FAILED";
     }
@@ -121,8 +117,8 @@ sub add_member_via_marriage {
     my ( $self, %args ) = @_;
 
     my $args_count = scalar ( keys %args );
-    if ( $args_count > 2 || $args_count < 2 || !$args_count ) {
-        $self->{log}->info("add_member_via_marriage accepts only two parameters: Name => 'Somebody', Gender => 'Non-Binary' ");
+    if ( !$args_count || $args_count != 2 ) {
+        $self->{log}->info("add_member_via_marriage accepts only two parameters: Name => 'Somebody', Gender => 'Non-Binary'");
         return "MEMBER_ADDITION_VIA_MARRIAGE_FAILED";
     }
 
@@ -136,7 +132,7 @@ sub add_member_via_marriage {
     # Lets support Same-Sex Marriage!
     # Don't check for Gender! Love is Love!
     my ( $spouse_id, $relationship_id ) = $self->{rf_dbi}->add_member_via_marriage( $self->{MemberID}, $args{Name}, $args{Gender} );
-    my $spouse_obj = RoyalFamily::Member->new(MemberID => $spouse_id);
+    my $spouse_obj = RoyalFamily::Member->new( MemberID => $spouse_id );
     
     return $spouse_obj;
 }
@@ -220,7 +216,7 @@ sub _find_children {
     # Loop through ID's and instantiate RoyalFamily::Member
     if ( @children ) {
         foreach my $child ( @children ) {
-            my $child_obj = RoyalFamily::Member->new(MemberID => $child->{Member});
+            my $child_obj = RoyalFamily::Member->new( MemberID => $child->{Member} );
             # Skip if not specified gender
             next if ( $args{Gender} && ( $child_obj->{Gender} ne $args{Gender} ) );
             # Push In!
@@ -238,7 +234,7 @@ sub _find_siblings {
     my @aggregated_siblings;
     my $mother_obj = $self->_find_mother();
 
-    if ($mother_obj) {
+    if ( $mother_obj ) {
         # Get Mothers Children
         my $gender = $args{Gender} || '';
         my @siblings = @{ $mother_obj->_find_children( Gender => $gender ) };
@@ -257,7 +253,7 @@ sub _find_matpat_relation {
     # Check if Member is DL and return no relations, as we don't hold that data
     if ( !$self->{DirectLineage} ) {
         $self->{log}->info("RoyalFamily database does not hold information pertaining to the family members of those married into the Royal Family");
-        return ;
+        return;
     }
     
     my %gender_mapping = (
@@ -276,7 +272,7 @@ sub _find_matpat_relation {
     if ( $mother_obj ) {
         # If finding paternal relations -> get mothers spouse -> get spouses siblings
         # Else just get mothers siblings
-        if ( $args{relation_type} =~ /Maternal/ && $mother_obj->{DirectLineage}) {
+        if ( $args{relation_type} =~ /Maternal/ && $mother_obj->{DirectLineage} ) {
             # Maternal
             @aunts  = @{ $mother_obj->_find_siblings( Gender => 'Female') };
             @uncles = @{ $mother_obj->_find_siblings( Gender => 'Male')   };

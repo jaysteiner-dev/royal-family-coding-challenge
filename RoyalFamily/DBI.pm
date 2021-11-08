@@ -189,7 +189,7 @@ sub _modify_insert_for_csv {
     my $result = $sth->fetchrow_hashref;
     $last_added_id = $result->{$column_name};
 
-    # Hacky but works
+    # Hacky but works - Perl cast as a number
     $last_added_id = $last_added_id + 0;
     my $new_id = ++$last_added_id;
 
@@ -202,6 +202,7 @@ sub _modify_insert_for_csv {
     return $mapped_queries{$type}, $new_id;
 }
 
+# Beginning of implementing regnal numbers
 sub get_names {
     my ( $self ) = @_;
         # Fetch All

@@ -88,11 +88,8 @@ sub main {
 
         # %supported_commands acts as both an indicator of supported commands
         # and as a references to the no. of params expected
-        if ( scalar @args < $supported_commands->{$command} ) {
-            $log->logwarn("command Command on Line: $line_index is less than than 3 - Please fix before continuing");
-            next;
-        } elsif ( scalar @args > $supported_commands->{$command} ) {
-            $log->logwarn("$command Command on Line: $line_index is greater than 3 - Please fix before continuing");
+        if ( scalar @args != $supported_commands->{$command} ) {
+            $log->logwarn("$command Command on Line: $line_index Accepts only $supported_commands->{$command} parameters - Please consider fixing before next run");
             next;
         }
 
@@ -113,7 +110,7 @@ sub main {
             $log->debug("RoyalFamily::Member Mother object created: \n", Dumper $rf_member);
             
             $log->info("Adding new child RoyalFamily::Member object via Mother");
-            my $child = $rf_member->add_child( Name => $child_name, Gender => $child_gender);
+            my $child = $rf_member->add_child( Name => $child_name, Gender => $child_gender );
             $log->debug("Child Object Returned: \n", Dumper $child);
             
             # Check an object has been returned
@@ -130,10 +127,10 @@ sub main {
         } elsif ( $command eq 'GET_RELATIONSHIP' ) {
             # Assume all is well now~!
             my ($member, $relationship) = @args;
-            $log->info("Actioning Command: $command, -- With Member Of: $member, looking for relationship type: $relationship" );
+            $log->info("Actioning Command: $command, -- With Member Of: $member, looking for relationship type: $relationship");
             
-            # Perform Action
-            $log->info("Instantiating RoyalFamily::Member Object");
+            # Create Member object
+            $log->info('Instantiating RoyalFamily::Member Object');
             my $rf_member = RoyalFamily::Member->new( Name => $member );
             if ( ref($rf_member) ne 'RoyalFamily::Member' ) {
                 print "PERSON_NOT_FOUND\n";
@@ -141,6 +138,7 @@ sub main {
             }
             $log->debug("RoyalFamily::Member Mother object created: \n", Dumper $rf_member);
             
+            # Perform action
             $log->info("Finding RoyalFamily::Member relations");
             my @relations = @{ $rf_member->get_relationship($relationship) };
             $log->debug("Relations object array returned: \n", Dumper @relations);
@@ -168,7 +166,7 @@ sub main {
             my ($member, $spouse_name, $spouse_gender) = @args;
             $log->info("Actioning Command: $command, -- With Member Of: $member, Spouse Name: $spouse_name, Spouse Gender: $spouse_gender" );
             
-            # Perform Action
+            # Create Member
             $log->info("Instantiating RoyalFamily::Member Object");
             my $rf_member = RoyalFamily::Member->new( Name => $member );
             if ( ref($rf_member) ne 'RoyalFamily::Member' ) {
@@ -177,8 +175,9 @@ sub main {
             }
             $log->debug("RoyalFamily::Member object created: \n", Dumper $rf_member);
             
+            # Perform action
             $log->info("Adding new spouse RoyalFamily::Member object via Current RF Member");
-            my $spouse = $rf_member->add_member_via_marriage( Name => $spouse_name, Gender => $spouse_gender);
+            my $spouse = $rf_member->add_member_via_marriage( Name => $spouse_name, Gender => $spouse_gender );
             $log->debug("Spouse Object Returned: \n", Dumper $spouse);
             
             # Check an object has been returned

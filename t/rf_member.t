@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 
 # Notes:
-# This is a test Library for RoyalFamily
+# This is a test library for RoyalFamily::Member
 
 use lib '..';
 use RoyalFamily::Member;
@@ -9,13 +9,11 @@ use RoyalFamily::DBI;
 
 use strict;
 use warnings;
-
-use Data::Dumper;
+use utf8;
 
 # Packages
 use Test::More;
 plan tests => 17;
-
 
 # Object instantion
 # 1 -- Effectively tests: new + _get_member
@@ -325,7 +323,7 @@ print "\n";
 done_testing();
 
 # NOTE:
-# STOP! This is not good practice, in future Mock DB
+# STOP! This is not good practice, in future Mock DB properly
 sub clean_db {
     my ( $member ) = @_;
 

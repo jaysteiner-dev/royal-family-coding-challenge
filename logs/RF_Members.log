@@ -1,0 +1,497 @@
+[0] run_me.pl 55 RF_Member - BEGINNING RUN
+[0] run_me.pl 59 RF_Member - Filename has been accepted
+[13] run_me.pl 63 RF_Member - File has been opened sucessfully
+[13] run_me.pl 66 RF_Member - Reading in Rows
+[13] run_me.pl 70 RF_Member - COMMAND ADDED: ADD_CHILD Flora Minerva Female
+[13] run_me.pl 70 RF_Member - COMMAND ADDED: GET_RELATIONSHIP Remus Maternal-Aunt
+[13] run_me.pl 70 RF_Member - COMMAND ADDED: GET_RELATIONSHIP Minerva Siblings
+[14] run_me.pl 70 RF_Member - COMMAND ADDED: ADD_CHILD Luna Lola Female
+[14] run_me.pl 70 RF_Member - COMMAND ADDED: GET_RELATIONSHIP Luna Maternal-Aunt
+[14] run_me.pl 70 RF_Member - COMMAND ADDED: ADD_CHILD Ted Bella Female
+[14] run_me.pl 70 RF_Member - COMMAND ADDED: GET_RELATIONSHIP Remus Siblings
+[14] run_me.pl 70 RF_Member - COMMAND ADDED: GET_RELATIONSHIP Lily Sister-In-Law
+[14] run_me.pl 101 RF_Member - Actioning Command: ADD_CHILD, -- With Parent Of: Flora, Child Name: Minerva, Child Gender: Female
+[14] run_me.pl 104 RF_Member - Instantiating Mother RoyalFamily::Member Object
+[100] run_me.pl 110 RF_Member - RoyalFamily::Member Mother object created: 
+$VAR1 = bless( {
+                 'Gender' => 'Female',
+                 'DateAdded' => '2021-11-05 10:59:56',
+                 'log' => bless( {
+                                   'is_OFF' => sub { "DUMMY" },
+                                   'num_appenders' => 0,
+                                   'INFO' => sub { "DUMMY" },
+                                   'category' => 'RF_Member',
+                                   'is_DEBUG' => sub { "DUMMY" },
+                                   'is_ERROR' => sub { "DUMMY" },
+                                   'TRACE' => $VAR1->{'log'}{'INFO'},
+                                   'layout' => undef,
+                                   'WARN' => $VAR1->{'log'}{'INFO'},
+                                   'DEBUG' => $VAR1->{'log'}{'INFO'},
+                                   'FATAL' => $VAR1->{'log'}{'INFO'},
+                                   'is_ALL' => sub { "DUMMY" },
+                                   'is_INFO' => sub { "DUMMY" },
+                                   'is_WARN' => sub { "DUMMY" },
+                                   'additivity' => 1,
+                                   'is_TRACE' => sub { "DUMMY" },
+                                   'level' => undef,
+                                   'OFF' => $VAR1->{'log'}{'INFO'},
+                                   'appender_names' => [],
+                                   'ERROR' => $VAR1->{'log'}{'INFO'},
+                                   'is_FATAL' => sub { "DUMMY" },
+                                   'ALL' => sub { "DUMMY" }
+                                 }, 'Log::Log4perl::Logger' ),
+                 'MemberID' => 4,
+                 'Name' => 'Flora',
+                 'DirectLineage' => 0,
+                 'rf_dbi' => bless( {
+                                      'db_type' => 'MySQL',
+                                      'dbh' => bless( {}, 'DBI::db' ),
+                                      'log' => $VAR1->{'log'}
+                                    }, 'RoyalFamily::DBI' )
+               }, 'RoyalFamily::Member' );
+[100] run_me.pl 112 RF_Member - Adding new child RoyalFamily::Member object via Mother
+[117] run_me.pl 114 RF_Member - Child Object Returned: 
+$VAR1 = bless( {
+                 'DirectLineage' => 1,
+                 'rf_dbi' => bless( {
+                                      'dbh' => bless( {}, 'DBI::db' ),
+                                      'db_type' => 'MySQL',
+                                      'log' => bless( {
+                                                        'is_OFF' => sub { "DUMMY" },
+                                                        'num_appenders' => 0,
+                                                        'INFO' => sub { "DUMMY" },
+                                                        'category' => 'RF_Member',
+                                                        'is_DEBUG' => sub { "DUMMY" },
+                                                        'is_ERROR' => sub { "DUMMY" },
+                                                        'TRACE' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'layout' => undef,
+                                                        'WARN' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'DEBUG' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'FATAL' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'is_ALL' => sub { "DUMMY" },
+                                                        'is_INFO' => sub { "DUMMY" },
+                                                        'is_WARN' => sub { "DUMMY" },
+                                                        'additivity' => 1,
+                                                        'is_TRACE' => sub { "DUMMY" },
+                                                        'level' => undef,
+                                                        'OFF' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'appender_names' => [],
+                                                        'ERROR' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'is_FATAL' => sub { "DUMMY" },
+                                                        'ALL' => sub { "DUMMY" }
+                                                      }, 'Log::Log4perl::Logger' )
+                                    }, 'RoyalFamily::DBI' ),
+                 'Name' => 'Minerva',
+                 'log' => $VAR1->{'rf_dbi'}{'log'},
+                 'MemberID' => 35,
+                 'DateAdded' => '2021-11-08 09:24:33',
+                 'Gender' => 'Female'
+               }, 'RoyalFamily::Member' );
+[117] run_me.pl 123 RF_Member - CHILD ADDED SUCESSFULLY
+[118] run_me.pl 130 RF_Member - Actioning Command: GET_RELATIONSHIP, -- With Member Of: Remus, looking for relationship type: Maternal-Aunt
+[118] run_me.pl 133 RF_Member - Instantiating RoyalFamily::Member Object
+[120] run_me.pl 139 RF_Member - RoyalFamily::Member Mother object created: 
+$VAR1 = bless( {
+                 'MemberID' => 26,
+                 'log' => bless( {
+                                   'is_OFF' => sub { "DUMMY" },
+                                   'num_appenders' => 0,
+                                   'INFO' => sub { "DUMMY" },
+                                   'category' => 'RF_Member',
+                                   'is_DEBUG' => sub { "DUMMY" },
+                                   'is_ERROR' => sub { "DUMMY" },
+                                   'TRACE' => $VAR1->{'log'}{'INFO'},
+                                   'layout' => undef,
+                                   'WARN' => $VAR1->{'log'}{'INFO'},
+                                   'DEBUG' => $VAR1->{'log'}{'INFO'},
+                                   'FATAL' => $VAR1->{'log'}{'INFO'},
+                                   'is_ALL' => sub { "DUMMY" },
+                                   'is_INFO' => sub { "DUMMY" },
+                                   'is_WARN' => sub { "DUMMY" },
+                                   'additivity' => 1,
+                                   'is_TRACE' => sub { "DUMMY" },
+                                   'level' => undef,
+                                   'OFF' => $VAR1->{'log'}{'INFO'},
+                                   'appender_names' => [],
+                                   'ERROR' => $VAR1->{'log'}{'INFO'},
+                                   'is_FATAL' => sub { "DUMMY" },
+                                   'ALL' => sub { "DUMMY" }
+                                 }, 'Log::Log4perl::Logger' ),
+                 'Name' => 'Remus',
+                 'DirectLineage' => 1,
+                 'rf_dbi' => bless( {
+                                      'dbh' => bless( {}, 'DBI::db' ),
+                                      'db_type' => 'MySQL',
+                                      'log' => $VAR1->{'log'}
+                                    }, 'RoyalFamily::DBI' ),
+                 'Gender' => 'Male',
+                 'DateAdded' => '2021-11-05 10:59:56'
+               }, 'RoyalFamily::Member' );
+[120] run_me.pl 142 RF_Member - Finding RoyalFamily::Member relations
+[155] run_me.pl 144 RF_Member - Relations object array returned: 
+$VAR1 = bless( {
+                 'DateAdded' => '2021-11-05 10:59:56',
+                 'Gender' => 'Female',
+                 'rf_dbi' => bless( {
+                                      'dbh' => bless( {}, 'DBI::db' ),
+                                      'db_type' => 'MySQL',
+                                      'log' => bless( {
+                                                        'is_OFF' => sub { "DUMMY" },
+                                                        'num_appenders' => 0,
+                                                        'INFO' => sub { "DUMMY" },
+                                                        'category' => 'RF_Member',
+                                                        'is_DEBUG' => sub { "DUMMY" },
+                                                        'is_ERROR' => sub { "DUMMY" },
+                                                        'TRACE' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'layout' => undef,
+                                                        'WARN' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'DEBUG' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'FATAL' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'is_ALL' => sub { "DUMMY" },
+                                                        'is_INFO' => sub { "DUMMY" },
+                                                        'is_WARN' => sub { "DUMMY" },
+                                                        'additivity' => 1,
+                                                        'is_TRACE' => sub { "DUMMY" },
+                                                        'level' => undef,
+                                                        'OFF' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'appender_names' => [],
+                                                        'ERROR' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'is_FATAL' => sub { "DUMMY" },
+                                                        'ALL' => sub { "DUMMY" }
+                                                      }, 'Log::Log4perl::Logger' )
+                                    }, 'RoyalFamily::DBI' ),
+                 'DirectLineage' => 1,
+                 'Name' => 'Dominique',
+                 'log' => $VAR1->{'rf_dbi'}{'log'},
+                 'MemberID' => 14
+               }, 'RoyalFamily::Member' );
+$VAR2 = bless( {
+                 'Gender' => 'Female',
+                 'DateAdded' => '2021-11-05 14:47:19',
+                 'MemberID' => 34,
+                 'log' => $VAR1->{'rf_dbi'}{'log'},
+                 'rf_dbi' => bless( {
+                                      'log' => $VAR1->{'rf_dbi'}{'log'},
+                                      'dbh' => bless( {}, 'DBI::db' ),
+                                      'db_type' => 'MySQL'
+                                    }, 'RoyalFamily::DBI' ),
+                 'DirectLineage' => 1,
+                 'Name' => 'Minerva'
+               }, 'RoyalFamily::Member' );
+$VAR3 = bless( {
+                 'Name' => 'Minerva',
+                 'rf_dbi' => bless( {
+                                      'log' => $VAR1->{'rf_dbi'}{'log'},
+                                      'dbh' => bless( {}, 'DBI::db' ),
+                                      'db_type' => 'MySQL'
+                                    }, 'RoyalFamily::DBI' ),
+                 'DirectLineage' => 1,
+                 'log' => $VAR1->{'rf_dbi'}{'log'},
+                 'MemberID' => 35,
+                 'DateAdded' => '2021-11-08 09:24:33',
+                 'Gender' => 'Female'
+               }, 'RoyalFamily::Member' );
+[155] run_me.pl 154 RF_Member - Creating Relations String
+[155] run_me.pl 156 RF_Member - Relations string returned: Dominique Minerva Minerva
+[156] run_me.pl 160 RF_Member - RELATIONS RETURNED SUCESSFULLY
+[156] run_me.pl 130 RF_Member - Actioning Command: GET_RELATIONSHIP, -- With Member Of: Minerva, looking for relationship type: Siblings
+[156] run_me.pl 133 RF_Member - Instantiating RoyalFamily::Member Object
+[158] run_me.pl 139 RF_Member - RoyalFamily::Member Mother object created: 
+$VAR1 = bless( {
+                 'MemberID' => 34,
+                 'log' => bless( {
+                                   'is_OFF' => sub { "DUMMY" },
+                                   'num_appenders' => 0,
+                                   'INFO' => sub { "DUMMY" },
+                                   'category' => 'RF_Member',
+                                   'is_DEBUG' => sub { "DUMMY" },
+                                   'is_ERROR' => sub { "DUMMY" },
+                                   'TRACE' => $VAR1->{'log'}{'INFO'},
+                                   'layout' => undef,
+                                   'WARN' => $VAR1->{'log'}{'INFO'},
+                                   'DEBUG' => $VAR1->{'log'}{'INFO'},
+                                   'FATAL' => $VAR1->{'log'}{'INFO'},
+                                   'is_ALL' => sub { "DUMMY" },
+                                   'is_INFO' => sub { "DUMMY" },
+                                   'is_WARN' => sub { "DUMMY" },
+                                   'additivity' => 1,
+                                   'is_TRACE' => sub { "DUMMY" },
+                                   'level' => undef,
+                                   'OFF' => $VAR1->{'log'}{'INFO'},
+                                   'appender_names' => [],
+                                   'ERROR' => $VAR1->{'log'}{'INFO'},
+                                   'is_FATAL' => sub { "DUMMY" },
+                                   'ALL' => sub { "DUMMY" }
+                                 }, 'Log::Log4perl::Logger' ),
+                 'DirectLineage' => 1,
+                 'rf_dbi' => bless( {
+                                      'log' => $VAR1->{'log'},
+                                      'dbh' => bless( {}, 'DBI::db' ),
+                                      'db_type' => 'MySQL'
+                                    }, 'RoyalFamily::DBI' ),
+                 'Name' => 'Minerva',
+                 'Gender' => 'Female',
+                 'DateAdded' => '2021-11-05 14:47:19'
+               }, 'RoyalFamily::Member' );
+[158] run_me.pl 142 RF_Member - Finding RoyalFamily::Member relations
+[177] run_me.pl 144 RF_Member - Relations object array returned: 
+$VAR1 = bless( {
+                 'DateAdded' => '2021-11-05 10:59:56',
+                 'Gender' => 'Female',
+                 'rf_dbi' => bless( {
+                                      'db_type' => 'MySQL',
+                                      'dbh' => bless( {}, 'DBI::db' ),
+                                      'log' => bless( {
+                                                        'is_OFF' => sub { "DUMMY" },
+                                                        'num_appenders' => 0,
+                                                        'INFO' => sub { "DUMMY" },
+                                                        'category' => 'RF_Member',
+                                                        'is_DEBUG' => sub { "DUMMY" },
+                                                        'is_ERROR' => sub { "DUMMY" },
+                                                        'TRACE' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'layout' => undef,
+                                                        'WARN' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'DEBUG' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'FATAL' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'is_ALL' => sub { "DUMMY" },
+                                                        'is_INFO' => sub { "DUMMY" },
+                                                        'is_WARN' => sub { "DUMMY" },
+                                                        'additivity' => 1,
+                                                        'is_TRACE' => sub { "DUMMY" },
+                                                        'level' => undef,
+                                                        'OFF' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'appender_names' => [],
+                                                        'ERROR' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'is_FATAL' => sub { "DUMMY" },
+                                                        'ALL' => sub { "DUMMY" }
+                                                      }, 'Log::Log4perl::Logger' )
+                                    }, 'RoyalFamily::DBI' ),
+                 'DirectLineage' => 1,
+                 'Name' => 'Victoire',
+                 'MemberID' => 12,
+                 'log' => $VAR1->{'rf_dbi'}{'log'}
+               }, 'RoyalFamily::Member' );
+$VAR2 = bless( {
+                 'Gender' => 'Female',
+                 'DateAdded' => '2021-11-05 10:59:56',
+                 'log' => $VAR1->{'rf_dbi'}{'log'},
+                 'MemberID' => 14,
+                 'Name' => 'Dominique',
+                 'DirectLineage' => 1,
+                 'rf_dbi' => bless( {
+                                      'log' => $VAR1->{'rf_dbi'}{'log'},
+                                      'dbh' => bless( {}, 'DBI::db' ),
+                                      'db_type' => 'MySQL'
+                                    }, 'RoyalFamily::DBI' )
+               }, 'RoyalFamily::Member' );
+$VAR3 = bless( {
+                 'MemberID' => 15,
+                 'log' => $VAR1->{'rf_dbi'}{'log'},
+                 'rf_dbi' => bless( {
+                                      'db_type' => 'MySQL',
+                                      'dbh' => bless( {}, 'DBI::db' ),
+                                      'log' => $VAR1->{'rf_dbi'}{'log'}
+                                    }, 'RoyalFamily::DBI' ),
+                 'DirectLineage' => 1,
+                 'Name' => 'Louis',
+                 'Gender' => 'Male',
+                 'DateAdded' => '2021-11-05 10:59:56'
+               }, 'RoyalFamily::Member' );
+$VAR4 = bless( {
+                 'DateAdded' => '2021-11-08 09:24:33',
+                 'Gender' => 'Female',
+                 'rf_dbi' => bless( {
+                                      'log' => $VAR1->{'rf_dbi'}{'log'},
+                                      'db_type' => 'MySQL',
+                                      'dbh' => bless( {}, 'DBI::db' )
+                                    }, 'RoyalFamily::DBI' ),
+                 'DirectLineage' => 1,
+                 'Name' => 'Minerva',
+                 'log' => $VAR1->{'rf_dbi'}{'log'},
+                 'MemberID' => 35
+               }, 'RoyalFamily::Member' );
+[177] run_me.pl 154 RF_Member - Creating Relations String
+[177] run_me.pl 156 RF_Member - Relations string returned: Victoire Dominique Louis Minerva
+[177] run_me.pl 160 RF_Member - RELATIONS RETURNED SUCESSFULLY
+[178] run_me.pl 101 RF_Member - Actioning Command: ADD_CHILD, -- With Parent Of: Luna, Child Name: Lola, Child Gender: Female
+[178] run_me.pl 104 RF_Member - Instantiating Mother RoyalFamily::Member Object
+[181] run_me.pl 130 RF_Member - Actioning Command: GET_RELATIONSHIP, -- With Member Of: Luna, looking for relationship type: Maternal-Aunt
+[182] run_me.pl 133 RF_Member - Instantiating RoyalFamily::Member Object
+[184] run_me.pl 101 RF_Member - Actioning Command: ADD_CHILD, -- With Parent Of: Ted, Child Name: Bella, Child Gender: Female
+[184] run_me.pl 104 RF_Member - Instantiating Mother RoyalFamily::Member Object
+[186] run_me.pl 110 RF_Member - RoyalFamily::Member Mother object created: 
+$VAR1 = bless( {
+                 'Gender' => 'Male',
+                 'DateAdded' => '2021-11-05 10:59:56',
+                 'MemberID' => 13,
+                 'log' => bless( {
+                                   'is_OFF' => sub { "DUMMY" },
+                                   'num_appenders' => 0,
+                                   'INFO' => sub { "DUMMY" },
+                                   'category' => 'RF_Member',
+                                   'is_DEBUG' => sub { "DUMMY" },
+                                   'is_ERROR' => sub { "DUMMY" },
+                                   'TRACE' => $VAR1->{'log'}{'INFO'},
+                                   'layout' => undef,
+                                   'WARN' => $VAR1->{'log'}{'INFO'},
+                                   'DEBUG' => $VAR1->{'log'}{'INFO'},
+                                   'FATAL' => $VAR1->{'log'}{'INFO'},
+                                   'is_ALL' => sub { "DUMMY" },
+                                   'is_INFO' => sub { "DUMMY" },
+                                   'is_WARN' => sub { "DUMMY" },
+                                   'additivity' => 1,
+                                   'is_TRACE' => sub { "DUMMY" },
+                                   'level' => undef,
+                                   'OFF' => $VAR1->{'log'}{'INFO'},
+                                   'appender_names' => [],
+                                   'ERROR' => $VAR1->{'log'}{'INFO'},
+                                   'is_FATAL' => sub { "DUMMY" },
+                                   'ALL' => sub { "DUMMY" }
+                                 }, 'Log::Log4perl::Logger' ),
+                 'DirectLineage' => 0,
+                 'rf_dbi' => bless( {
+                                      'log' => $VAR1->{'log'},
+                                      'db_type' => 'MySQL',
+                                      'dbh' => bless( {}, 'DBI::db' )
+                                    }, 'RoyalFamily::DBI' ),
+                 'Name' => 'Ted'
+               }, 'RoyalFamily::Member' );
+[186] run_me.pl 112 RF_Member - Adding new child RoyalFamily::Member object via Mother
+[187] RoyalFamily/Member.pm 95 RF_Member - Male Member is not capable of bearing children
+[187] run_me.pl 114 RF_Member - Child Object Returned: 
+$VAR1 = 'CHILD_ADDITION_FAILED';
+[188] run_me.pl 130 RF_Member - Actioning Command: GET_RELATIONSHIP, -- With Member Of: Remus, looking for relationship type: Siblings
+[188] run_me.pl 133 RF_Member - Instantiating RoyalFamily::Member Object
+[190] run_me.pl 139 RF_Member - RoyalFamily::Member Mother object created: 
+$VAR1 = bless( {
+                 'Gender' => 'Male',
+                 'DateAdded' => '2021-11-05 10:59:56',
+                 'log' => bless( {
+                                   'is_OFF' => sub { "DUMMY" },
+                                   'num_appenders' => 0,
+                                   'INFO' => sub { "DUMMY" },
+                                   'category' => 'RF_Member',
+                                   'is_DEBUG' => sub { "DUMMY" },
+                                   'is_ERROR' => sub { "DUMMY" },
+                                   'TRACE' => $VAR1->{'log'}{'INFO'},
+                                   'layout' => undef,
+                                   'WARN' => $VAR1->{'log'}{'INFO'},
+                                   'DEBUG' => $VAR1->{'log'}{'INFO'},
+                                   'FATAL' => $VAR1->{'log'}{'INFO'},
+                                   'is_ALL' => sub { "DUMMY" },
+                                   'is_INFO' => sub { "DUMMY" },
+                                   'is_WARN' => sub { "DUMMY" },
+                                   'additivity' => 1,
+                                   'is_TRACE' => sub { "DUMMY" },
+                                   'level' => undef,
+                                   'OFF' => $VAR1->{'log'}{'INFO'},
+                                   'appender_names' => [],
+                                   'ERROR' => $VAR1->{'log'}{'INFO'},
+                                   'is_FATAL' => sub { "DUMMY" },
+                                   'ALL' => sub { "DUMMY" }
+                                 }, 'Log::Log4perl::Logger' ),
+                 'MemberID' => 26,
+                 'DirectLineage' => 1,
+                 'rf_dbi' => bless( {
+                                      'log' => $VAR1->{'log'},
+                                      'db_type' => 'MySQL',
+                                      'dbh' => bless( {}, 'DBI::db' )
+                                    }, 'RoyalFamily::DBI' ),
+                 'Name' => 'Remus'
+               }, 'RoyalFamily::Member' );
+[190] run_me.pl 142 RF_Member - Finding RoyalFamily::Member relations
+[197] run_me.pl 144 RF_Member - Relations object array returned: 
+[197] run_me.pl 130 RF_Member - Actioning Command: GET_RELATIONSHIP, -- With Member Of: Lily, looking for relationship type: Sister-In-Law
+[197] run_me.pl 133 RF_Member - Instantiating RoyalFamily::Member Object
+[203] run_me.pl 139 RF_Member - RoyalFamily::Member Mother object created: 
+$VAR1 = bless( {
+                 'DateAdded' => '2021-11-05 10:59:56',
+                 'Gender' => 'Female',
+                 'rf_dbi' => bless( {
+                                      'log' => bless( {
+                                                        'is_OFF' => sub { "DUMMY" },
+                                                        'num_appenders' => 0,
+                                                        'INFO' => sub { "DUMMY" },
+                                                        'category' => 'RF_Member',
+                                                        'is_DEBUG' => sub { "DUMMY" },
+                                                        'is_ERROR' => sub { "DUMMY" },
+                                                        'TRACE' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'layout' => undef,
+                                                        'WARN' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'DEBUG' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'FATAL' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'is_ALL' => sub { "DUMMY" },
+                                                        'is_INFO' => sub { "DUMMY" },
+                                                        'is_WARN' => sub { "DUMMY" },
+                                                        'additivity' => 1,
+                                                        'is_TRACE' => sub { "DUMMY" },
+                                                        'level' => undef,
+                                                        'OFF' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'appender_names' => [],
+                                                        'ERROR' => $VAR1->{'rf_dbi'}{'log'}{'INFO'},
+                                                        'is_FATAL' => sub { "DUMMY" },
+                                                        'ALL' => sub { "DUMMY" }
+                                                      }, 'Log::Log4perl::Logger' ),
+                                      'dbh' => bless( {}, 'DBI::db' ),
+                                      'db_type' => 'MySQL'
+                                    }, 'RoyalFamily::DBI' ),
+                 'DirectLineage' => 1,
+                 'Name' => 'Lily',
+                 'log' => $VAR1->{'rf_dbi'}{'log'},
+                 'MemberID' => 25
+               }, 'RoyalFamily::Member' );
+[204] run_me.pl 142 RF_Member - Finding RoyalFamily::Member relations
+[221] run_me.pl 144 RF_Member - Relations object array returned: 
+$VAR1 = bless( {
+                 'MemberID' => 21,
+                 'log' => bless( {
+                                   'is_OFF' => sub { "DUMMY" },
+                                   'num_appenders' => 0,
+                                   'INFO' => sub { "DUMMY" },
+                                   'category' => 'RF_Member',
+                                   'is_DEBUG' => sub { "DUMMY" },
+                                   'is_ERROR' => sub { "DUMMY" },
+                                   'TRACE' => $VAR1->{'log'}{'INFO'},
+                                   'layout' => undef,
+                                   'WARN' => $VAR1->{'log'}{'INFO'},
+                                   'DEBUG' => $VAR1->{'log'}{'INFO'},
+                                   'FATAL' => $VAR1->{'log'}{'INFO'},
+                                   'is_ALL' => sub { "DUMMY" },
+                                   'is_INFO' => sub { "DUMMY" },
+                                   'is_WARN' => sub { "DUMMY" },
+                                   'additivity' => 1,
+                                   'is_TRACE' => sub { "DUMMY" },
+                                   'level' => undef,
+                                   'OFF' => $VAR1->{'log'}{'INFO'},
+                                   'appender_names' => [],
+                                   'ERROR' => $VAR1->{'log'}{'INFO'},
+                                   'is_FATAL' => sub { "DUMMY" },
+                                   'ALL' => sub { "DUMMY" }
+                                 }, 'Log::Log4perl::Logger' ),
+                 'Name' => 'Darcy',
+                 'rf_dbi' => bless( {
+                                      'dbh' => bless( {}, 'DBI::db' ),
+                                      'db_type' => 'MySQL',
+                                      'log' => $VAR1->{'log'}
+                                    }, 'RoyalFamily::DBI' ),
+                 'DirectLineage' => 0,
+                 'Gender' => 'Female',
+                 'DateAdded' => '2021-11-05 10:59:56'
+               }, 'RoyalFamily::Member' );
+$VAR2 = bless( {
+                 'Gender' => 'Female',
+                 'DateAdded' => '2021-11-05 10:59:56',
+                 'MemberID' => 23,
+                 'log' => $VAR1->{'log'},
+                 'rf_dbi' => bless( {
+                                      'log' => $VAR1->{'log'},
+                                      'dbh' => bless( {}, 'DBI::db' ),
+                                      'db_type' => 'MySQL'
+                                    }, 'RoyalFamily::DBI' ),
+                 'DirectLineage' => 0,
+                 'Name' => 'Alice'
+               }, 'RoyalFamily::Member' );
+[221] run_me.pl 154 RF_Member - Creating Relations String
+[221] run_me.pl 156 RF_Member - Relations string returned: Darcy Alice
+[221] run_me.pl 160 RF_Member - RELATIONS RETURNED SUCESSFULLY
+[222] run_me.pl 195 RF_Member - RUN COMPLETE
